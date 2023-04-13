@@ -1,4 +1,5 @@
-﻿using DataStructures;
+﻿using System.Collections;
+//using DataStructures;
 
-Queue q = new Queue();
-q.Enqueue(2);
+Stack s = new Stack();
+
