@@ -125,4 +125,30 @@ public class QueueTest
 
         Assert.IsNotNull(queue.Start);
     }
+
+    [Test]
+    public void queueShouldBeClearFromClearMethod()
+    {
+        int value = 5;
+
+        queue.Enqueue(value);
+        queue.Enqueue(value);
+        queue.Enqueue(value);
+
+        queue.Clear();
+
+        Assert.That(queue.Start, Is.EqualTo(queue.End));
+    }
+
+    [Test]
+    public void returnValueAtTheBeginningOfTheQueueWithoutRemovingIt()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        queue.Peek();
+
+        Assert.That(queue.Start, Is.EqualTo(queue.End));
+    }
 }

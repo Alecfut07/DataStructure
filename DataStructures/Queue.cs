@@ -23,10 +23,13 @@ namespace DataStructures
 
         public Queue()
         {
+            _start = _end = null;
+            _size = 0;
         }
 
         public Queue(int value)
         {
+            _start = _end = null;
             _size = value;
         }
 
