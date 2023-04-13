@@ -71,7 +71,7 @@ jobs:
     - name: Testingbalbha
       run: |
         pwd
-        ls -lah
+        ls
 
     # Install the .NET Core workload
     - name: Install .NET Core
