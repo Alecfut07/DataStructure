@@ -69,7 +69,9 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Testingbalbha
-      run: pwd
+      run: |
+        pwd
+        ls -lah
 
     # Install the .NET Core workload
     - name: Install .NET Core
