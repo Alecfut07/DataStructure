@@ -29,8 +29,7 @@ namespace DataStructures
 
         public Queue(int value)
         {
-            _start = _end = null;
-            _size = value;
+            Enqueue(value);
         }
 
         public void Enqueue(int value)
@@ -69,18 +68,16 @@ namespace DataStructures
 
         public bool Contains(int value)
         {
-            Node n = new Node(value);
-            if (_start != null)
+            Node temp = _start;
+            while (temp != null)
             {
-                if (_start.Value == value)
+                if (temp.Value == value)
                 {
                     return true;
                 }
-                else
-                {
-
-                }
+                temp = temp.Next;
             }
+
             return false;
         }
 
@@ -93,6 +90,22 @@ namespace DataStructures
 
             int value = _start.Value;
             return value;
+        }
+
+        public int[] ToArray()
+        {
+            int[] array = new int[_size];
+            Node temp = _start;
+
+            int i = 0;
+            while (temp != null && i < array.Length)
+            {
+                array[i] = temp.Value;
+                temp = temp.Next;
+                i++;
+            }
+
+            return array;
         }
     }
 }

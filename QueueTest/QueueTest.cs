@@ -41,7 +41,7 @@ public class QueueTest
         int value = 5;
 
         queue.Enqueue(value);
-    
+
         Assert.That(queue.Size, Is.EqualTo(1));
     }
 
@@ -141,6 +141,23 @@ public class QueueTest
     }
 
     [Test]
+    public void queueSizeShouldBeClearFromClearMethod()
+    {
+        int value = 5;
+
+        queue.Enqueue(value);
+        queue.Enqueue(value);
+        queue.Enqueue(value);
+
+
+        Assert.That(queue.Size, Is.EqualTo(3));
+
+        queue.Clear();
+
+        Assert.That(queue.Size, Is.EqualTo(0));
+    }
+
+    [Test]
     public void returnValueAtTheBeginningOfTheQueueWithoutRemovingIt()
     {
         queue.Enqueue(1);
@@ -149,6 +166,75 @@ public class QueueTest
 
         queue.Peek();
 
-        Assert.That(queue.Start, Is.EqualTo(queue.End));
+        Assert.That(queue.Start.Value, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void usingACorrectValueToVerifyIsInQueue()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        bool actual = queue.Contains(2);
+
+        Assert.That(actual, Is.EqualTo(true));
+    }
+
+    [Test]
+    public void usingAFakeValueToVerifyIsNotInQueue()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        bool actual = queue.Contains(10);
+
+        Assert.That(actual, Is.EqualTo(false));
+    }
+
+    [Test]
+    public void convertingOneValueFromQueueToArray()
+    {
+        queue.Enqueue(1);
+
+        int[] array = queue.ToArray();
+
+        Assert.That(array, Has.Exactly(1).Items);
+    }
+
+    [Test]
+    public void convertingTwoValuesFromQueueToArray()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+
+        int[] array = queue.ToArray();
+
+        Assert.That(array, Has.Exactly(2).Items);
+    }
+
+    [Test]
+    public void convertingThreeValuesFromQueueToArray()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        int[] array = queue.ToArray();
+
+        Assert.That(array, Has.Exactly(3).Items);
+    }
+
+    [Test]
+    public void verifyAllArrayValuesIsNotNull()
+    {
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        int[] array = queue.ToArray();
+
+        Assert.That(array, Is.All.Not.Null);
     }
 }
