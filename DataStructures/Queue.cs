@@ -3,43 +3,93 @@ namespace DataStructures
 {
     public class Queue
     {
-        public Node? start = null;
-        public Node? end = null;
-        public int Size = 0;
+        public Node? Start
+        {
+            get { return _start; }
+        }
+        private Node? _start = null;
+
+        public Node? End
+        {
+            get { return _end; }
+        }
+        private Node? _end = null;
+
+        public int Size
+        {
+            get { return _size; }
+        }
+        private int _size = 0;
+
+        public Queue()
+        {
+        }
+
+        public Queue(int value)
+        {
+            _size = value;
+        }
 
         public void Enqueue(int value)
         {
             Node n = new Node(value);
 
-            if (start == null)
+            if (_start == null)
             {
-                start = end = n;
-                Size++;
+                _start = _end = n;
             }
-            else if (end != null)
+            else if (_end != null)
             {
-                Size++;
-                end.next = n;
-                end = n;
+                _end.Next = n;
+                _end = n;
             }
+            _size++;
         }
 
         public int Dequeue()
         {
             int value = 0;
-            if (start != null)
+            if (_start != null)
             {
-                value = start.value;
-                start = start.next;
-
+                value = _start.Value;
+                _start = _start.Next;
             }
 
             return value;
         }
 
-        public void ShowQueue()
+        public void Clear()
         {
+            _start = _end = null;
+            _size = 0;
+        }
 
+        public bool Contains(int value)
+        {
+            Node n = new Node(value);
+            if (_start != null)
+            {
+                if (_start.Value == value)
+                {
+                    return true;
+                }
+                else
+                {
+
+                }
+            }
+            return false;
+        }
+
+        public int Peek()
+        {
+            if (_start == null)
+            {
+                return 0;
+            }
+
+            int value = _start.Value;
+            return value;
         }
     }
 }

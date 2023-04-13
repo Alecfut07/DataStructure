@@ -2,7 +2,7 @@
 
 namespace QueueTest;
 
-public class Tests
+public class QueueTest
 {
     private Queue queue { get; set; } = null!;
 

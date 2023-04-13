@@ -3,12 +3,12 @@ namespace DataStructures
 {
 	public class Node
 	{
-		public int value;
-		public Node? next = null;
+		public int Value;
+		public Node? Next = null;
 
 		public Node(int value)
 		{
-			this.value = value;
+			Value = value;
 		}
 	}
 }

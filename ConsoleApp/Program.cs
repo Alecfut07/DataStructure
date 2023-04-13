@@ -1,3 +1,6 @@
-﻿using DataStructures;
+﻿using System.Collections;
 
-Class1 test = new Class1();
+Queue q = new Queue();
+Stack s = new Stack();
+LinkedList<int> l = new LinkedList<int>();
+

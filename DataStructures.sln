@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{5D5F4CC7-6764-4EB3-8524-D39CBEA6FAB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueTest", "QueueTest\QueueTest.csproj", "{1C6276C2-4B15-419C-8E6E-CBBBD3894862}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresTest", "QueueTest\DataStructuresTest.csproj", "{1C6276C2-4B15-419C-8E6E-CBBBD3894862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
