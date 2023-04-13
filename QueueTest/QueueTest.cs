@@ -22,7 +22,7 @@ public class Tests
         queue.Enqueue(value);
 
         // Assert
-        Assert.IsNotNull(queue.start);
+        Assert.IsNotNull(queue.Start);
     }
 
     [Test]
@@ -32,7 +32,7 @@ public class Tests
 
         queue.Enqueue(value);
 
-        Assert.IsNotNull(queue.end);
+        Assert.IsNotNull(queue.End);
     }
 
     [Test]
@@ -76,7 +76,7 @@ public class Tests
         queue.Enqueue(value);
         queue.Enqueue(value);
 
-        Assert.That(queue.start, Is.Not.EqualTo(queue.end));
+        Assert.That(queue.Start, Is.Not.EqualTo(queue.End));
     }
 
     [Test]
@@ -84,7 +84,7 @@ public class Tests
     {
         queue.Dequeue();
 
-        Assert.That(queue.start, Is.EqualTo(queue.end));
+        Assert.That(queue.Start, Is.EqualTo(queue.End));
     }
 
     [Test]
@@ -96,7 +96,7 @@ public class Tests
 
         queue.Dequeue();
 
-        Assert.IsNull(queue.start);
+        Assert.IsNull(queue.Start);
     }
 
     [Test]
@@ -109,7 +109,7 @@ public class Tests
 
         queue.Dequeue();
 
-        Assert.IsNotNull(queue.start);
+        Assert.IsNotNull(queue.Start);
     }
 
     [Test]
@@ -123,6 +123,6 @@ public class Tests
 
         queue.Dequeue();
 
-        Assert.IsNotNull(queue.start);
+        Assert.IsNotNull(queue.Start);
     }
 }
